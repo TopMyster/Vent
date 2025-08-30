@@ -1,6 +1,6 @@
 import { useState } from 'react'
 export default function Chatbot() {
-    const [ messages, Setmessages ] = useState([''])
+    const [ messages, Setmessages ] = useState(['']) 
     const [ usertext, Setusertext ] = useState('')
 
     return (
@@ -12,7 +12,7 @@ export default function Chatbot() {
           <input
                 id='usertext'
                 value={usertext}
-                onChange={e => setUserText(e.target.value)}
+                onChange={e => Setusertext(e.target.value)}
                 placeholder="Type your message..."
             />
         <button onClick={submition}>send</button>
