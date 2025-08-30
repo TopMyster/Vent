@@ -28,9 +28,6 @@ export default function Chatbot() {
                     role: "user",
                     content: `You are a feel better bot`,
                 },
-                {
-                    role: "user",
-                }
                 ],
                 temperature: 1,
                 max_tokens: 200,
