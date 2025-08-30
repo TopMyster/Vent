@@ -1,6 +1,6 @@
 import { useState } from 'react'
 export default function Chatbot() {
-    const [ messages, Setmessages ] = useState(['']) 
+    const [ messages, Setmessages ] = useState('') 
     const [ usertext, Setusertext ] = useState('')
 
     return (
@@ -17,7 +17,6 @@ export default function Chatbot() {
     )
 
     async function submition() {
-        Setusertext(document.getElementsByClassName('usertext').value)
         try {
             const response = await fetch("/api/chat", { 
             method: "POST",
