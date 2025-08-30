@@ -1,20 +1,12 @@
 import { useState } from 'react'
 export default function Chatbot() {
-    const [ messages, Setmessages ] = useState([]) 
+    const [ messages, Setmessages ] = useState('') 
     const [ usertext, Setusertext ] = useState('')
 
     return (
         <>
         <h1>Hi</h1>
-        <div>
-            {messages.map((msg, idx) => {
-            <div key={idx} style={{
-                color: msg.role === 'bot' ? 'blue' : 'black'
-            }}>
-                <b>{msg.role === 'user' ? 'You' : 'Bot'}:</b> {msg.content}
-            </div>
-        })}
-        </div>
+        {messages}
           <input
                 id='usertext'
                 value={usertext}
@@ -64,11 +56,6 @@ export default function Chatbot() {
             console.error("Unexpected response format:", data)
             
             }
-
-            Setmessages(msgs => [
-                ...msgs,
-                { role: 'bot', content: reply }
-            ])
         } catch (err) {
             console.error("Error during fetch:", err)
         }
