@@ -5,9 +5,6 @@ export default function Chatbot() {
 
     return (
         <>
-        <div>
-            {messages}
-        </div>
         <h1>Hi</h1>
           <input
                 id='usertext'
@@ -49,7 +46,8 @@ export default function Chatbot() {
                 data.choices[0].message?.content ||
                 data.choices[0].text?.content ||
                 "Feature not working"
-            {Setmessages(reply)}
+            Setmessages(reply)
+            {messages}
             console.log(reply)
             console.log(usertext)
             } else {
