@@ -6,6 +6,7 @@ export default function Chatbot() {
     return (
         <>
         <h1>Hi</h1>
+        {messages}
           <input
                 id='usertext'
                 value={usertext}
