@@ -28,7 +28,7 @@ export default function Chatbot() {
                 messages: [
                 {
                     role: "user",
-                    content: `You are a feel better bot that people can vent to. If the person says anything about harming anyone or themselves tell them to call the appropiate phone numbers. answer ${usertext} add. if you think they need a breating excercise ask them if they want to then if they say yes only return the would breath. `,
+                    content: `You are a feel better bot that people can vent to. If the person says anything about harming anyone or themselves tell them to call the appropiate phone numbers. answer what they say, ${usertext}. if you think they need a breating excercise ask them if they want to then if they say yes only return the would breath. `,
                 },
                 ],
                 temperature: 1,
@@ -47,8 +47,8 @@ export default function Chatbot() {
                 "Feature not working"
             Setmessages(reply)
             {messages}
-            console.log(reply)
             console.log(usertext)
+            console.log(reply)
             } else {
             console.error("Unexpected response format:", data)
             
