@@ -1,6 +1,6 @@
 import { useState } from 'react'
 export default function Chatbot() {
-    const [ messages, Setmessages ] = useState('')
+    const [ messages, Setmessages ] = useState([''])
     const [ usertext, Setusertext ] = useState('')
 
     return (
@@ -9,7 +9,12 @@ export default function Chatbot() {
             {messages}
         </div>
         <h1>Hi</h1>
-        <input id='usertext'/>
+          <input
+                id='usertext'
+                value={usertext}
+                onChange={e => setUserText(e.target.value)}
+                placeholder="Type your message..."
+            />
         <button onClick={submition}>send</button>
         </>
     )
@@ -27,7 +32,7 @@ export default function Chatbot() {
                 messages: [
                 {
                     role: "user",
-                    content: `You are a feel better bot that people can vent to. If the person says anything about harming anyone or themselves tell them to call the appropiate phone numbers.. if you think they need a breating excercise ask them if they want to then if they say yes only return the would breath. `,
+                    content: `You are a feel better bot that people can vent to. If the person says anything about harming anyone or themselves tell them to call the appropiate phone numbers. answer ${usertext} add. if you think they need a breating excercise ask them if they want to then if they say yes only return the would breath. `,
                 },
                 ],
                 temperature: 1,
@@ -44,7 +49,7 @@ export default function Chatbot() {
                 data.choices[0].message?.content ||
                 data.choices[0].text?.content ||
                 "Feature not working"
-            Setmessages(reply)
+            {Setmessages(reply)}
             console.log(reply)
             console.log(usertext)
             } else {
