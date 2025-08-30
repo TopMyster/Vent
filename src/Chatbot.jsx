@@ -14,7 +14,6 @@ export default function Chatbot() {
     )
 
     async function submition() {
-        console.log("Sending transcript:", transcript)
 
         try {
             const response = await fetch("/api/chat", { 
@@ -31,7 +30,6 @@ export default function Chatbot() {
                 },
                 {
                     role: "user",
-                    content: transcript
                 }
                 ],
                 temperature: 1,
