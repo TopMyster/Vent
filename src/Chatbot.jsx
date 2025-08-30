@@ -27,7 +27,7 @@ export default function Chatbot() {
                 messages: [
                 {
                     role: "user",
-                    content: `You are a feel better bot that people can vent to. If the person says anything about harming anyone or themselves tell them to call the appropiate phone numbers. answer ${usertext} add. if you think they need a breating excercise ask them if they want to then if they say yes only return the would breath. `,
+                    content: `You are a feel better bot that people can vent to. If the person says anything about harming anyone or themselves tell them to call the appropiate phone numbers.. if you think they need a breating excercise ask them if they want to then if they say yes only return the would breath. `,
                 },
                 ],
                 temperature: 1,
