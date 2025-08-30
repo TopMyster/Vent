@@ -1,6 +1,7 @@
 import { useState } from 'react'
 export default function Chatbot() {
     const [ messages, Setmessages ] = useState('')
+    const [ usertext, Setusertext ] = useState('')
 
     return (
         <>
@@ -8,13 +9,13 @@ export default function Chatbot() {
             {messages}
         </div>
         <h1>Hi</h1>
-        <input/>
+        <input id='usertext'/>
         <button onClick={submition}>send</button>
         </>
     )
 
     async function submition() {
-
+        Setusertext(document.getElementsByClassName('usertext').value)
         try {
             const response = await fetch("/api/chat", { 
             method: "POST",
@@ -26,7 +27,7 @@ export default function Chatbot() {
                 messages: [
                 {
                     role: "user",
-                    content: `You are a feel better bot`,
+                    content: `You are a feel better bot that people can vent to. If the person says anything about harming anyone or themselves tell them to call the appropiate phone numbers. answer ${usertext} add. if you think they need a breating excercise ask them if they want to then if they say yes only return the would breath. `,
                 },
                 ],
                 temperature: 1,
