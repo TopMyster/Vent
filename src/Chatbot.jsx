@@ -31,7 +31,7 @@ export default function Chatbot() {
                 },
                 ],
                 temperature: 1,
-                max_tokens: 200,
+                max_tokens: 500,
                 top_p: 1,
                 stream: false
             }),
@@ -43,8 +43,10 @@ export default function Chatbot() {
             const reply =
                 data.choices[0].message?.content ||
                 data.choices[0].text?.content ||
+                "Feature not working"
             Setmessages(reply)
             console.log(reply)
+            console.log(usertext)
             } else {
             console.error("Unexpected response format:", data)
             
