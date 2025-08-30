@@ -46,7 +46,9 @@ export default function Chatbot() {
                 data.choices[0].text?.content ||
                 "Feature not working"
             Setmessages(reply)
-            {messages}
+            return (
+                {messages}
+            )
             console.log(usertext)
             console.log(reply)
             } else {
