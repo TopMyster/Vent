@@ -43,7 +43,6 @@ export default function Chatbot() {
             const reply =
                 data.choices[0].message?.content ||
                 data.choices[0].text?.content ||
-                "Please ask a work related question."
             Setmessages(reply)
             console.log(reply)
             } else {
