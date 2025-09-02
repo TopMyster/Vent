@@ -2,7 +2,7 @@ import { useState } from 'react'
 import './index.css'
 
 export default function Chatbot() {
-    const [ messages, Setmessages ] = useState('') 
+    const [ messages, Setmessages ] = useState('hi') 
 
     return (
         <>
