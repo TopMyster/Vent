@@ -2,7 +2,13 @@ import { useState } from 'react'
 import './index.css'
 
 export default function Chatbot() {
-    const [ messages, Setmessages ] = useState('hi') 
+    const [ messages, Setmessages ] = useState([]) 
+    const [ usertext, setUserText ] = useState('') 
+
+    
+    const handleChange = (event) => {
+        setUserText(event.target.value);
+    }
 
     return (
         <>
@@ -13,6 +19,8 @@ export default function Chatbot() {
             <input
                 id='usertext'
                 placeholder="Type your message..."
+                onChange={handleChange}
+                value={usertext}
             />
             <button onClick={submition}>➜</button>
           </div>
@@ -31,7 +39,7 @@ export default function Chatbot() {
                 messages: [
                 {
                     role: "user",
-                    content: `You are a feel better bot that people can vent to. If the person says anything about harming anyone or themselves tell them to call the appropiate phone numbers. answer what they say, ${usertext}. if you think they need a breating excercise ask them if they want to then if they say yes only return the would breath. `,
+                    content: `You are a bot people can talk to and vent to about life. Do not be mean just be kind and funny. If you think they need to breath. The reply / ask of the user is  ${usertext}.`,
                 },
                 ],
                 temperature: 1,
@@ -48,17 +56,14 @@ export default function Chatbot() {
                 data.choices[0].message?.content ||
                 data.choices[0].text?.content ||
                 "Feature not working"
-            Setmessages(reply)
-            return (
-                {messages}
-            )
-            console.log(usertext)
-            console.log(reply)
+            Setmessages([...messages, reply])
             } else {
+            Setmessages("Sorry, I couldn't get a response. Please try again.");
             console.error("Unexpected response format:", data)
             
             }
         } catch (err) {
+            Setmessages("Sorry, I couldn't get a response. Please try again.");
             console.error("Error during fetch:", err)
         }
         }
