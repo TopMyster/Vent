@@ -1,0 +1,59 @@
+.Banner {
+    width: 100vw;
+    height: 83px;
+    background-color: rgb(162, 77, 222);
+    position: fixed;
+    left: 0px;
+    align-items: center;
+    justify-content: center;
+    z-index: 1000;    
+    display: flex;  
+    top: 0px;
+}
+
+.Banner img {
+    object-fit: contain;
+}
+
+.usertextdiv {
+  position: fixed;
+  left: 50%;
+  bottom: 32px;
+  transform: translateX(-50%);
+  width: 90vw;
+  max-width: 700px;
+  display: flex;
+  align-items: center;
+  background: transparent;
+  z-index: 1000;
+  justify-content: center;
+}
+
+#usertext {
+    width: 100%;
+    box-shadow: 2px 2px 30px rgba(0, 0, 0, 0.158);
+    border: none;
+    padding: 12px 15px 12px 26px;
+    border-radius: 20px;
+}
+
+.usertextdiv button {
+    position: absolute;
+    border-radius: 100%;
+    width: 30px;
+    height: 30px;
+    border: none;
+    background-color: rgb(162, 77, 222);
+    color: white;
+    transition: .2s;
+    z-index: 100;
+    top: 5px;
+    right: 5px;
+}
+
+.usertextdiv button:hover {
+    background-color: rgb(147, 55, 212);
+}
+#messages {
+    overflow: scroll;
+}
