@@ -78,6 +78,7 @@ export default function Chatbot() {
            setMessages(prev => [
             ...prev,
             { role: 'ai', content: reply }
+            
         ])
         SetLoad(false)
             } else {
@@ -95,6 +96,13 @@ export default function Chatbot() {
                 ])
             console.error("Error during fetch:", err)
         }
-         }, 1000);
+         }, 1500);
         }
 }
+
+setInterval(() => {
+        window.scrollTo({
+    top: document.body.scrollHeight,
+    behavior: 'smooth' 
+    })
+}, 1)
