@@ -99,10 +99,3 @@ export default function Chatbot() {
          }, 1500);
         }
 }
-
-setInterval(() => {
-        window.scrollTo({
-    top: document.body.scrollHeight,
-    behavior: 'smooth' 
-    })
-}, 1)
