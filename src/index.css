@@ -73,7 +73,7 @@
 }
 
 .AI {
-    min-width: 100px;
+    min-width: 15px;
     align-self: flex-start;
     background-color: rgb(162, 77, 222);
     color: #fff;

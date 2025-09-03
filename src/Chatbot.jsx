@@ -2,14 +2,15 @@ import { useState } from 'react'
 import './index.css'
 
 export default function Chatbot() {
-    const [ messages, Setmessages ] = useState([]) 
+    const [ messages, setMessages ] = useState([]) 
     const [ usertext, setUserText ] = useState('') 
+    const [ Load, SetLoad] = useState(false)
 
     
     const handleChange = (event) => {
         setUserText(event.target.value)
     }
-
+     
     return (
         <>
         <div id='messages'>
@@ -28,10 +29,23 @@ export default function Chatbot() {
     )
 
     async function submition() {
-        Setmessages(prev => [
+        SetLoad(true)
+        setMessages(prev => [
             ...prev,
             { role: 'user', content: usertext }
         ])
+
+         if (Load) {
+        setMessages(prev => [...prev, 
+            {role: 'ai', content: '...'}
+        ])
+    }
+
+    if(!Load) {
+        setMessages(messages.filter(messages => messages !== "..."))
+    }
+
+        setTimeout(async () => {
 
         try {
             const response = await fetch("/api/chat", { 
@@ -57,16 +71,17 @@ export default function Chatbot() {
             const data = await response.json()
 
             if (data.choices && data.choices.length > 0) {
-            const reply =
+            let reply =
                 data.choices[0].message?.content ||
-                data.choices[0].text?.content ||
+                data.choices[0].text?.content |s|
                 "Feature not working"
-           Setmessages(prev => [
+           setMessages(prev => [
             ...prev,
             { role: 'ai', content: reply }
         ])
+        SetLoad(false)
             } else {
-             Setmessages(prev => [
+             setMessages(prev => [
                     ...prev,
                     { role: 'ai', content: "Sorry, I couldn't get a response. Please try again." }
                 ])
@@ -74,11 +89,12 @@ export default function Chatbot() {
             
             }
         } catch (err) {
-             Setmessages(prev => [
+             setMessages(prev => [
                     ...prev,
                     { role: 'ai', content: "Sorry, I couldn't get a response. Please try again." }
                 ])
             console.error("Error during fetch:", err)
         }
+         }, 1000);
         }
 }
