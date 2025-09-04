@@ -19,7 +19,7 @@ export default function Chatbot() {
           <div className='usertextdiv'>
             <input
                 id='usertext'
-                placeholder="Type your message..."
+                placeholder="Talk to me..."
                 onChange={handleChange}
                 value={usertext}
             />
