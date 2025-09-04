@@ -79,7 +79,7 @@ export default function Chatbot() {
             ...prev,
             { role: 'ai', content: reply }
         ])
-        SetLoad(false)
+        // SetLoad(false)
             } else {
              setMessages(prev => [
                     ...prev,
