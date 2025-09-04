@@ -5,7 +5,7 @@ body {
 .Banner {
     width: 100vw;
     height: 90px;
-    background-color: rgba(149, 2, 255, 0.81);
+    background: linear-gradient(135deg, #9602ffdf 60%, #aa33ffdb 100%);
     position: fixed;
     left: 0px;
     align-items: center;
@@ -52,7 +52,7 @@ body {
     width: 30px;
     height: 30px;
     border: none;
-    background-color: rgb(162, 77, 222);
+    background: linear-gradient(135deg, #9502ff 60%, #aa33ff 100%);
     color: white;
     transition: .2s;
     z-index: 100;
@@ -85,7 +85,7 @@ body {
 .AI {
     min-width: 15px;
     align-self: flex-start;
-    background-color: rgba(149, 2, 255, 0.81);
+    background: linear-gradient(135deg, #9602ffdf 50%, #aa33ffdb 100%);
     color: #fff;
     padding: 15px 15px;
     border-radius: 40px;
@@ -95,7 +95,7 @@ body {
 
 .User {
     align-self: flex-end;
-   background-color: rgb(255, 255, 255);
+    background-color: rgb(255, 255, 255);
     color: #000000;
     padding: 15px 15px;
     border-radius: 40px;
