@@ -101,6 +101,6 @@ export default function Chatbot() {
                 ])
             console.error("Error during fetch:", err)
         }
-         }, 1500);
+         }, 800);
         }
 }
