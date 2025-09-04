@@ -1,5 +1,6 @@
 import { useState } from 'react'
 import './index.css'
+import logo from './assets/logo.png'
 
 export default function Chatbot() {
     const [ messages, setMessages ] = useState([]) 
@@ -14,12 +15,17 @@ export default function Chatbot() {
     return (
         <>
         <div id='messages'>
+            <div className='placeholder'>
+                <img src={logo} width={50}/>
+                <h1 style={{fontWeight: 830, color: 'rgba(128, 25, 201, 1)',}}>Hi I'm Vent</h1><br/>
+                <h2 style={{fontWeight: 550,}}>I'm a friend for when you're in need</h2>
+            </div>
             {messages.map((msg, idx) => <h3 key={idx} className={`msg ${msg.role === 'ai' ? 'AI' : 'User'}`}>{msg.content}</h3>)}
         </div>
           <div className='usertextdiv'>
             <input
                 id='usertext'
-                placeholder="Talk to me..."
+                placeholder="Talk with to me..."
                 onChange={handleChange}
                 value={usertext}
             />
