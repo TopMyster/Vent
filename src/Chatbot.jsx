@@ -30,7 +30,7 @@ export default function Chatbot() {
 
     async function submition() {
         // SetLoad(true)
-        setMessages(prev => [
+        setMessages(messages => [
             ...messages,
             { role: 'user', content: usertext }
         ])
