@@ -4,7 +4,7 @@ import './index.css'
 export default function Chatbot() {
     const [ messages, setMessages ] = useState([]) 
     const [ usertext, setUserText ] = useState('') 
-    const [ Load, SetLoad] = useState(false)
+    // const [ Load, SetLoad] = useState(false)
 
     
     const handleChange = (event) => {
@@ -29,21 +29,21 @@ export default function Chatbot() {
     )
 
     async function submition() {
-        SetLoad(true)
+        // SetLoad(true)
         setMessages(prev => [
             ...prev,
             { role: 'user', content: usertext }
         ])
 
-         if (Load) {
-        setMessages(prev => [...prev, 
-            {role: 'ai', content: '...'}
-        ])
-    }
+    //      if (Load) {
+    //     setMessages(prev => [...prev, 
+    //         {role: 'ai', content: '...'}
+    //     ])
+    // }
 
-    if(!Load) {
-        setMessages(messages.filter(messages => messages !== "..."))
-    }
+    // if(!Load) {
+    //     setMessages(messages.filter(messages => messages !== "..."))
+    // }
 
         setTimeout(async () => {
 
