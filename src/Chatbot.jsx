@@ -1,6 +1,6 @@
 import { useState } from 'react'
 import './index.css'
-import logo from './assets/logo.png'
+import logo from './assets/logo2.png'
 
 export default function Chatbot() {
     const [ messages, setMessages ] = useState([]) 
