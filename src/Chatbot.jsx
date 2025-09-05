@@ -5,7 +5,6 @@ import logo from './assets/logo.png'
 export default function Chatbot() {
     const [ messages, setMessages ] = useState([]) 
     const [ usertext, setUserText ] = useState('') 
-    // const [ Load, SetLoad] = useState(false)
 
     
     const handleChange = (event) => {
@@ -17,7 +16,7 @@ export default function Chatbot() {
         <div id='messages'>
             <div className='placeholder'>
                 <img src={logo} width={50}/>
-                <h1 style={{fontWeight: 830, color: 'rgba(128, 25, 201, 1)',}}>Hi I'm Vent</h1><br/>
+                <h1 style={{fontWeight: 830, color: 'rgba(128, 25, 201, 1)',}}>Hi, I'm Vent</h1><br/>
                 <h2 style={{fontWeight: 550,}}>I'm a friend for when you're in need</h2>
             </div>
             {messages.map((msg, idx) => <h3 key={idx} className={`msg ${msg.role === 'ai' ? 'AI' : 'User'}`} style={{animation: msg.role === 'ai' ? 'ai_reply .3s forwards' : 'you_reply .2s forwards'}}>{msg.content}</h3>)}
@@ -35,21 +34,10 @@ export default function Chatbot() {
     )
 
     async function submition() {
-        // SetLoad(true)
         setMessages(prev => [
             ...prev,
             { role: 'user', content: usertext }
         ])
-
-    //      if (Load) {
-    //     setMessages(prev => [...prev, 
-    //         {role: 'ai', content: '...'}
-    //     ])
-    // }
-
-    // if(!Load) {
-    //     setMessages(messages.filter(messages => messages !== "..."))
-    // }
 
         setTimeout(async () => {
 
@@ -85,7 +73,7 @@ export default function Chatbot() {
             ...prev,
             { role: 'ai', content: reply }
         ])
-        // SetLoad(false)
+
             } else {
              setMessages(prev => [
                     ...prev,
