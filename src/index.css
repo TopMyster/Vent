@@ -53,7 +53,7 @@ body {
 }
 
 .usertextdiv button {
-    position: absolute;
+    position: fixed;
     border-radius: 100%;
     width: 34px;
     height: 34px;
@@ -125,12 +125,24 @@ input:focus {
     position: relative;
 }
 
-@keyframes bounce {
-    0% {
-        scale: 1;
-    } 50% {
-        scale: .8;
-    } 100% {
-        scale: 1;
-    }
+@keyframes ai_reply {
+ 0% {
+    opacity: 0;
+    transform: translateY(20px) scale(.93);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0px) scale(1);
+  }
+}
+
+@keyframes you_reply {
+ 0% {
+    opacity: 0;
+    transform: translateY(10px) scale(.93);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0px) scale(1);
+  }
 }

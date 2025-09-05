@@ -20,7 +20,7 @@ export default function Chatbot() {
                 <h1 style={{fontWeight: 830, color: 'rgba(128, 25, 201, 1)',}}>Hi I'm Vent</h1><br/>
                 <h2 style={{fontWeight: 550,}}>I'm a friend for when you're in need</h2>
             </div>
-            {messages.map((msg, idx) => <h3 key={idx} className={`msg ${msg.role === 'ai' ? 'AI' : 'User'}`}>{msg.content}</h3>)}
+            {messages.map((msg, idx) => <h3 key={idx} className={`msg ${msg.role === 'ai' ? 'AI' : 'User'}`} style={{animation: msg.role === 'ai' ? 'ai_reply .3s forwards' : 'you_reply .2s forwards'}}>{msg.content}</h3>)}
         </div>
           <div className='usertextdiv'>
             <input
@@ -80,7 +80,7 @@ export default function Chatbot() {
             let reply =
                 data.choices[0].message?.content ||
                 data.choices[0].text?.content |s|
-                "Feature not working"
+                "That's enough chating with me for the day. Go have some fun!"
            setMessages(prev => [
             ...prev,
             { role: 'ai', content: reply }
