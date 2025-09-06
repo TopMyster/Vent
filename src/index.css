@@ -92,6 +92,7 @@ body {
 }
 
 .AI {
+    max-width: 700px;
     min-width: 15px;
     align-self: flex-start;
     background: linear-gradient(135deg, #9602ffdf 50%, #aa33ffdb 100%);
@@ -101,10 +102,12 @@ body {
     margin-left: 15px;
     box-shadow: 2px 2px 30px rgba(0, 0, 0, 0.109);
     transition: .2s;
+    margin-left: 15px;
 }
 
 .User {
     align-self: flex-end;
+    max-width: 700px;
     background-color: rgb(255, 255, 255);
     color: #000000;
     padding: 15px 15px;
@@ -112,6 +115,7 @@ body {
     margin-right: 15px;
     box-shadow: 2px 2px 30px rgba(0, 0, 0, 0.109);
     transition: .2s;
+    margin-left: 15px;
 }
 
 input:focus {
