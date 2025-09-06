@@ -13,6 +13,7 @@ body {
     z-index: 1000;    
     display: flex;  
     top: 0px;
+    border-radius: 0px 0px 10px 10px;
     box-shadow: 2px 2px 22px rgba(162, 77, 222, 0.224);
     backdrop-filter: blur(5px);
 }
