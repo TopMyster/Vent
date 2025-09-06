@@ -15,7 +15,7 @@ export default function Chatbot() {
         <>
         <div id='messages'>
             <div className='placeholder'>
-                <img src={logo} width={50}/>
+                <img src={logo} width={85}/>
                 <h1 style={{fontWeight: 830, color: 'rgba(128, 25, 201, 1)',}}>Hi, I'm Vent</h1><br/>
                 <h2 style={{fontWeight: 550,}}>I'm a friend for when you're in need</h2>
             </div>
